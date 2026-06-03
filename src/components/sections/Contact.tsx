@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitHeading } from "@/components/motion/SplitHeading";
 import { Magnetic } from "@/components/motion/Magnetic";
+import { CopyEmail } from "@/components/ui/CopyEmail";
 import type { Dictionary } from "@/content/types";
 import { site } from "@/lib/site";
 
@@ -32,6 +33,14 @@ export function Contact({ dict }: { dict: Dictionary }) {
             <span className="size-2 rounded-full bg-accent" aria-hidden="true" />
             {dict.contact.availability}
           </span>
+        </Reveal>
+
+        <Reveal as="div" className="mt-6">
+          <CopyEmail
+            email={site.email}
+            copyLabel={dict.contact.copy}
+            copiedLabel={dict.contact.copied}
+          />
         </Reveal>
       </div>
     </section>

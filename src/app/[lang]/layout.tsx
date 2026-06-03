@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { Cursor } from "@/components/motion/Cursor";
 import { BackgroundFX } from "@/components/motion/BackgroundFX";
+import { BackToTop } from "@/components/motion/BackToTop";
 import { getDictionary, isLang, locales } from "@/content/dictionaries";
 import type { Lang } from "@/content/types";
 
@@ -68,12 +69,18 @@ export default async function LangLayout({
             dangerouslySetInnerHTML={{ __html: ".anim-hidden{opacity:1}" }}
           />
         </noscript>
+        <a href="#main-content" className="skip-link">
+          {dict.a11y.skipToContent}
+        </a>
         <BackgroundFX />
         <SmoothScroll />
         <Cursor />
         <Header lang={typedLang} dict={dict} />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer dict={dict} />
+        <BackToTop label={dict.a11y.backToTop} />
       </body>
     </html>
   );

@@ -74,6 +74,8 @@ export const en: Dictionary = {
     body: "I'm available for freelance projects. Tell me what you have in mind.",
     ctaLabel: "Get in touch",
     availability: "Available for freelance",
+    copy: "Copy",
+    copied: "Copied!",
   },
   footer: {
     builtWith: "Built with Next.js, Tailwind & GSAP",
@@ -83,5 +85,16 @@ export const en: Dictionary = {
     title: "Gabriel Porras — Full-Stack Software Engineer",
     description:
       "Full-stack software engineer. I build digital products end to end, with a focus on quality, security, and performance.",
+  },
+  a11y: {
+    skipToContent: "Skip to content",
+    backToTop: "Back to top",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+  },
+  notFound: {
+    title: "Page not found",
+    body: "The page you're looking for doesn't exist or was moved.",
+    cta: "Back to home",
   },
 };

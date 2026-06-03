@@ -74,6 +74,8 @@ export const es: Dictionary = {
     body: "Estoy disponible para proyectos freelance. Cuéntame qué tienes en mente.",
     ctaLabel: "Escríbeme",
     availability: "Disponible para freelance",
+    copy: "Copiar",
+    copied: "¡Copiado!",
   },
   footer: {
     builtWith: "Hecho con Next.js, Tailwind y GSAP",
@@ -83,5 +85,16 @@ export const es: Dictionary = {
     title: "Gabriel Porras — Ingeniero de Software Full-Stack",
     description:
       "Ingeniero de software full-stack. Construyo productos digitales de punta a punta, con foco en calidad, seguridad y rendimiento.",
+  },
+  a11y: {
+    skipToContent: "Saltar al contenido",
+    backToTop: "Volver arriba",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
+  },
+  notFound: {
+    title: "Página no encontrada",
+    body: "La página que buscas no existe o fue movida.",
+    cta: "Volver al inicio",
   },
 };

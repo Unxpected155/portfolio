@@ -60,6 +60,21 @@ export type ContactCopy = {
   body: string;
   ctaLabel: string;
   availability: string;
+  copy: string;
+  copied: string;
+};
+
+export type A11yCopy = {
+  skipToContent: string;
+  backToTop: string;
+  openMenu: string;
+  closeMenu: string;
+};
+
+export type NotFoundCopy = {
+  title: string;
+  body: string;
+  cta: string;
 };
 
 export type FooterCopy = {
@@ -83,4 +98,6 @@ export type Dictionary = {
   contact: ContactCopy;
   footer: FooterCopy;
   meta: MetaCopy;
+  a11y: A11yCopy;
+  notFound: NotFoundCopy;
 };
