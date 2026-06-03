@@ -5,9 +5,10 @@ import { cn } from "@/lib/cn";
 
 export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
   const other: Lang = lang === "es" ? "en" : "es";
+  // Order mirrors the on-page section order (About → Work → Contact).
   const nav = [
-    { href: "#work", label: dict.nav.work },
     { href: "#about", label: dict.nav.about },
+    { href: "#work", label: dict.nav.work },
     { href: "#contact", label: dict.nav.contact },
   ];
 
@@ -23,7 +24,10 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
           <span className="text-accent">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 sm:flex" aria-label={dict.nav.work}>
+        <nav
+          className="hidden items-center gap-7 sm:flex"
+          aria-label={lang === "es" ? "Navegación principal" : "Primary navigation"}
+        >
           {nav.map((item) => (
             <a
               key={item.href}

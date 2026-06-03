@@ -5,6 +5,9 @@ import { GeistMono } from "geist/font/mono";
 import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { Cursor } from "@/components/motion/Cursor";
+import { BackgroundFX } from "@/components/motion/BackgroundFX";
 import { getDictionary, isLang, locales } from "@/content/dictionaries";
 import type { Lang } from "@/content/types";
 
@@ -56,9 +59,18 @@ export default async function LangLayout({
   return (
     <html
       lang={typedLang}
+      data-scroll-behavior="smooth"
       className={`${bricolage.variable} ${hanken.variable} ${GeistMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col antialiased">
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{ __html: ".anim-hidden{opacity:1}" }}
+          />
+        </noscript>
+        <BackgroundFX />
+        <SmoothScroll />
+        <Cursor />
         <Header lang={typedLang} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict} />

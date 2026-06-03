@@ -1,30 +1,39 @@
 import { Trophy } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitHeading } from "@/components/motion/SplitHeading";
 import type { Dictionary } from "@/content/types";
 
 export function Experience({ dict }: { dict: Dictionary }) {
   return (
     <section className="scroll-mt-24 px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionLabel index="04">{dict.experience.label}</SectionLabel>
-        <h2 className="mt-4 font-display text-[length:var(--text-h1)] font-bold leading-[1.06] tracking-tight">
+        <Reveal>
+          <SectionLabel index="04">{dict.experience.label}</SectionLabel>
+        </Reveal>
+        <SplitHeading className="mt-4 font-display text-[length:var(--text-h1)] font-bold leading-[1.06] tracking-tight">
           {dict.experience.heading}
-        </h2>
+        </SplitHeading>
 
-        <ol className="mt-12 border-l border-border">
+        <Reveal as="ol" stagger className="mt-12 border-l border-border">
           {dict.experience.items.map((item) => (
-            <li key={`${item.period}-${item.role}`} className="relative pb-10 pl-8 last:pb-0">
+            <li
+              key={`${item.period}-${item.role}`}
+              className="relative pb-10 pl-8 last:pb-0"
+            >
               <span className="absolute -left-[5px] top-1.5 size-2.5 rounded-full bg-accent" />
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-faint">
                 {item.period}
               </p>
-              <h3 className="mt-1 font-display text-xl font-semibold">{item.role}</h3>
+              <h3 className="mt-1 font-display text-xl font-semibold">
+                {item.role}
+              </h3>
               <p className="mt-2 max-w-[60ch] text-muted">{item.summary}</p>
             </li>
           ))}
-        </ol>
+        </Reveal>
 
-        <ul className="mt-10 flex flex-wrap gap-3">
+        <Reveal as="ul" stagger className="mt-10 flex flex-wrap gap-3">
           {dict.experience.awards.map((award) => (
             <li
               key={award}
@@ -34,7 +43,7 @@ export function Experience({ dict }: { dict: Dictionary }) {
               {award}
             </li>
           ))}
-        </ul>
+        </Reveal>
       </div>
     </section>
   );

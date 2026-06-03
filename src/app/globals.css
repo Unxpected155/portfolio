@@ -50,8 +50,155 @@
   }
 }
 
+/* ---------- Motion ---------- */
+
+/* Lenis smooth scroll (recommended baseline) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Hidden until JS reveals it (prevents a flash before the entrance plays) */
+.anim-hidden {
+  opacity: 0;
+}
+
+.split-line {
+  will-change: transform;
+}
+
+/* Scroll-reactive ambient background (behind all content) */
+.bg-fx {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bg-blob {
+  position: absolute;
+  top: -8%;
+  left: -6%;
+  border-radius: 999px;
+  filter: blur(90px);
+  will-change: transform, opacity;
+}
+.bg-blob-a {
+  width: 46vw;
+  height: 46vw;
+  opacity: 0.45;
+  background: radial-gradient(closest-side, var(--color-accent), transparent 70%);
+}
+.bg-blob-b {
+  width: 38vw;
+  height: 38vw;
+  opacity: 0.3;
+  background: radial-gradient(closest-side, oklch(0.62 0.15 235), transparent 70%);
+}
+
+/* Accent dot after the hero name: a live "online" pulse */
+.hero-dot {
+  position: relative;
+  display: inline-block;
+  width: 0.18em;
+  height: 0.18em;
+  margin-left: 0.06em;
+  vertical-align: baseline;
+}
+.hero-dot__core,
+.hero-dot__ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background-color: var(--color-accent);
+}
+/* The ping sits behind the core (earlier in the DOM) and expands outward */
+.hero-dot__ping {
+  animation: hero-pulse 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes hero-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.4);
+    opacity: 0;
+  }
+}
+
+/* Ambient accent glow behind the hero name */
+.hero-glow {
+  position: absolute;
+  left: 30%;
+  top: 46%;
+  width: min(760px, 85vw);
+  aspect-ratio: 3 / 2;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, var(--color-accent), transparent 72%);
+  opacity: 0.14;
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Custom cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--color-accent);
+}
+html.cursor-hidden,
+html.cursor-hidden * {
+  cursor: none !important;
+}
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .anim-hidden {
+    opacity: 1 !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+  .hero-dot__ping {
+    animation: none;
+    display: none;
   }
 }

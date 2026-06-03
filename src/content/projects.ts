@@ -107,4 +107,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects.filter((p) => p.featured);
+// Featured projects, most recent first (keeps the section in chronological order).
+export const featuredProjects = projects
+  .filter((p) => p.featured)
+  .sort((a, b) => Number(b.year) - Number(a.year));
