@@ -5,13 +5,18 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SplitHeading } from "@/components/motion/SplitHeading";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { CopyEmail } from "@/components/ui/CopyEmail";
+import { SectionNumber } from "@/components/motion/SectionNumber";
 import type { Dictionary } from "@/content/types";
 import { site } from "@/lib/site";
 
 export function Contact({ dict }: { dict: Dictionary }) {
   return (
-    <section id="contact" className="scroll-mt-24 px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="contact"
+      className="relative scroll-mt-24 overflow-hidden px-6 py-24 md:py-32"
+    >
+      <SectionNumber value="05" />
+      <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
           <SectionLabel index="05">{dict.contact.label}</SectionLabel>
         </Reveal>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import { GeistMono } from "geist/font/mono";
 import "../globals.css";
 import { Header } from "@/components/layout/Header";
@@ -9,12 +10,19 @@ import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { Cursor } from "@/components/motion/Cursor";
 import { BackgroundFX } from "@/components/motion/BackgroundFX";
 import { BackToTop } from "@/components/motion/BackToTop";
+import { TransitionProvider } from "@/components/motion/TransitionProvider";
+import { RouteFrame } from "@/components/motion/RouteFrame";
 import { getDictionary, isLang, locales } from "@/content/dictionaries";
 import type { Lang } from "@/content/types";
 
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-bricolage",
+const generalSans = localFont({
+  src: [
+    { path: "../../fonts/GeneralSans-400.woff2", weight: "400", style: "normal" },
+    { path: "../../fonts/GeneralSans-500.woff2", weight: "500", style: "normal" },
+    { path: "../../fonts/GeneralSans-600.woff2", weight: "600", style: "normal" },
+    { path: "../../fonts/GeneralSans-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-display-family",
   display: "swap",
 });
 
@@ -61,7 +69,7 @@ export default async function LangLayout({
     <html
       lang={typedLang}
       data-scroll-behavior="smooth"
-      className={`${bricolage.variable} ${hanken.variable} ${GeistMono.variable} h-full`}
+      className={`${generalSans.variable} ${hanken.variable} ${GeistMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col antialiased">
         <noscript>
@@ -75,12 +83,14 @@ export default async function LangLayout({
         <BackgroundFX />
         <SmoothScroll />
         <Cursor />
-        <Header lang={typedLang} dict={dict} />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer dict={dict} />
-        <BackToTop label={dict.a11y.backToTop} />
+        <TransitionProvider>
+          <Header lang={typedLang} dict={dict} />
+          <main id="main-content" className="flex-1">
+            <RouteFrame>{children}</RouteFrame>
+          </main>
+          <Footer dict={dict} />
+          <BackToTop label={dict.a11y.backToTop} />
+        </TransitionProvider>
       </body>
     </html>
   );

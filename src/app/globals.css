@@ -23,7 +23,7 @@
 
 /* Fonts come from next/font (variables set on <html>) */
 @theme inline {
-  --font-display: var(--font-bricolage);
+  --font-display: var(--font-display-family);
   --font-body: var(--font-hanken);
   --font-mono: var(--font-geist-mono);
 }
@@ -74,6 +74,87 @@ html.lenis body {
 
 .split-line {
   will-change: transform;
+}
+
+/* "Curtain" view transition: two panels meet, then part to reveal */
+.vt-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+}
+.vt-panel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50.5%;
+  background-color: var(--color-accent);
+  will-change: transform;
+}
+.vt-panel-top {
+  top: 0;
+}
+.vt-panel-bottom {
+  bottom: 0;
+}
+
+/* Oversized faint section index (parallax watermark) */
+.section-number {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 0;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  font-size: clamp(7rem, 20vw, 16rem);
+  color: var(--color-text);
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+/* Full-screen exploratory menu */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: var(--color-bg);
+  opacity: 0;
+  visibility: hidden;
+}
+.menu-toggle-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 12px;
+  color: var(--color-text);
+}
+.menu-toggle-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transition:
+    transform 0.3s ease,
+    top 0.3s ease;
+}
+.menu-toggle-icon span:nth-child(1) {
+  top: 0;
+}
+.menu-toggle-icon span:nth-child(2) {
+  top: 10px;
+}
+.menu-toggle-icon[data-open="true"] span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+.menu-toggle-icon[data-open="true"] span:nth-child(2) {
+  top: 5px;
+  transform: rotate(-45deg);
 }
 
 /* Skip-to-content link (visible only on keyboard focus) */

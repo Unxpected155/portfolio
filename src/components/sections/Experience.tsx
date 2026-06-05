@@ -2,12 +2,17 @@ import { Trophy } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitHeading } from "@/components/motion/SplitHeading";
+import { SectionNumber } from "@/components/motion/SectionNumber";
 import type { Dictionary } from "@/content/types";
 
 export function Experience({ dict }: { dict: Dictionary }) {
   return (
-    <section className="scroll-mt-24 px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="experience"
+      className="relative scroll-mt-24 overflow-hidden px-6 py-24 md:py-32"
+    >
+      <SectionNumber value="04" />
+      <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal>
           <SectionLabel index="04">{dict.experience.label}</SectionLabel>
         </Reveal>

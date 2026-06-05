@@ -35,6 +35,7 @@ export function ProjectCard({
       }`}
     >
       <div
+        data-media
         className={`relative overflow-hidden ${
           featured ? "h-56 lg:h-full lg:min-h-[22rem]" : "h-44 sm:h-52"
         }`}
