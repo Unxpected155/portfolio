@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { SplitHeading } from "@/components/motion/SplitHeading";
+import { WordHeading } from "@/components/motion/WordHeading";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { CopyEmail } from "@/components/ui/CopyEmail";
 import { SectionNumber } from "@/components/motion/SectionNumber";
@@ -20,9 +20,9 @@ export function Contact({ dict }: { dict: Dictionary }) {
         <Reveal>
           <SectionLabel index="05">{dict.contact.label}</SectionLabel>
         </Reveal>
-        <SplitHeading className="mt-4 max-w-[16ch] font-display text-[length:var(--text-display)] font-bold leading-[1.02] tracking-[-0.02em]">
+        <WordHeading className="mt-4 max-w-[16ch] font-display text-[length:var(--text-display)] font-bold leading-[1.02] tracking-[-0.02em]">
           {dict.contact.heading}
-        </SplitHeading>
+        </WordHeading>
         <Reveal as="p" className="mt-6 max-w-[50ch] text-lg text-muted">
           {dict.contact.body}
         </Reveal>

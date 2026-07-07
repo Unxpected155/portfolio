@@ -24,11 +24,12 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
   const pathname = usePathname();
   const overlayRef = useRef<HTMLDivElement>(null);
 
+  // Order mirrors the on-page section order (and their SectionNumber values).
   const nav = [
     { href: "#about", id: "about", label: dict.nav.about },
     { href: "#work", id: "work", label: dict.nav.work },
-    { href: "#stack", id: "stack", label: dict.stack.label },
     { href: "#experience", id: "experience", label: dict.experience.label },
+    { href: "#stack", id: "stack", label: dict.stack.label },
     { href: "#contact", id: "contact", label: dict.nav.contact },
   ];
 
@@ -149,7 +150,7 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
 
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1 font-mono text-xs">
-              <a
+              <Link
                 href="/es"
                 onClick={(event) => {
                   event.preventDefault();
@@ -164,8 +165,8 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
                 )}
               >
                 ES
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/en"
                 onClick={(event) => {
                   event.preventDefault();
@@ -180,7 +181,7 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
                 )}
               >
                 EN
-              </a>
+              </Link>
             </div>
 
             <button

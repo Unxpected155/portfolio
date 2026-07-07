@@ -23,8 +23,8 @@ export default async function HomePage({
       <Hero lang={typedLang} dict={dict} />
       <About dict={dict} />
       <Projects lang={typedLang} dict={dict} />
-      <Stack dict={dict} />
       <Experience dict={dict} />
+      <Stack dict={dict} />
       <Contact dict={dict} />
     </>
   );

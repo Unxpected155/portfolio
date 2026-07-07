@@ -35,11 +35,11 @@ export function Stack({ dict }: { dict: Dictionary }) {
       id="stack"
       className="relative scroll-mt-24 overflow-hidden py-24 md:py-32"
     >
-      <SectionNumber value="03" />
+      <SectionNumber value="04" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Reveal>
-          <SectionLabel index="03">{dict.stack.label}</SectionLabel>
+          <SectionLabel index="04">{dict.stack.label}</SectionLabel>
         </Reveal>
         <SplitHeading className="mt-4 font-display text-[length:var(--text-h1)] font-bold leading-[1.06] tracking-tight">
           {dict.stack.heading}

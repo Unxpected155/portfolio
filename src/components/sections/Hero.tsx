@@ -40,10 +40,10 @@ export function Hero({ lang, dict }: { lang: Lang; dict: Dictionary }) {
           </p>
 
           <div data-hero="cta" className="mt-9 flex flex-wrap gap-3.5">
-            <Magnetic>
+            <Magnetic strength={0.4}>
               <Button href="#work">{dict.hero.ctaPrimary}</Button>
             </Magnetic>
-            <Magnetic>
+            <Magnetic strength={0.22}>
               <Button href={site.cv[lang]} variant="ghost" external>
                 {dict.hero.ctaSecondary}
               </Button>

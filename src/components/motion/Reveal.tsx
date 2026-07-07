@@ -13,6 +13,8 @@ type RevealProps = {
   delay?: number;
   /** Stagger the element's direct children instead of moving the block as one. */
   stagger?: boolean;
+  /** Per-item stagger delay in seconds (default 0.1). Only used when stagger=true. */
+  staggerDelay?: number;
   /** ScrollTrigger start position. */
   start?: string;
 };
@@ -28,6 +30,7 @@ export function Reveal({
   y = 24,
   delay = 0,
   stagger = false,
+  staggerDelay = 0.1,
   start = "top 85%",
 }: RevealProps) {
   const Tag = (as ?? "div") as ElementType;
@@ -48,7 +51,7 @@ export function Reveal({
         duration: 0.9,
         ease: "power3.out",
         delay,
-        stagger: stagger ? 0.1 : 0,
+        stagger: stagger ? staggerDelay : 0,
         scrollTrigger: { trigger: el, start },
       });
     },

@@ -21,6 +21,7 @@ export function About({ dict }: { dict: Dictionary }) {
         <Reveal
           as="div"
           stagger
+          staggerDelay={0.12}
           className="mt-8 max-w-[65ch] space-y-5 text-lg text-muted"
         >
           {dict.about.body.map((paragraph) => (

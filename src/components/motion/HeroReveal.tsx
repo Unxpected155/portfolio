@@ -43,6 +43,17 @@ export function HeroReveal({
 
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
+        // Header slides down into view with the hero sequence.
+        const header = document.querySelector("header");
+        if (header) {
+          tl.fromTo(
+            header,
+            { y: -72, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
+            0,
+          );
+        }
+
         // Ambient accent glow fades and expands behind the name.
         tl.fromTo(
           q('[data-hero="glow"]'),
