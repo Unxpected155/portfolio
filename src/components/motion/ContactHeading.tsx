@@ -81,7 +81,9 @@ export function ContactHeading({
   return (
     <h2 ref={ref} className={className}>
       <span className="ch-lead text-[0.72em]">{lead}</span>{" "}
-      <span className="ch-accent text-highlight uppercase">{accent}</span>
+      <span className="ch-accent whitespace-nowrap text-highlight uppercase">
+        {accent}
+      </span>
     </h2>
   );
 }

@@ -54,7 +54,7 @@ export function Hero({ lang, dict }: { lang: Lang; dict: Dictionary }) {
         <a
           data-hero="scroll"
           href="#about"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-xs uppercase tracking-[0.2em] text-faint transition-colors hover:text-text"
+          className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 font-mono text-xs uppercase tracking-[0.2em] text-faint transition-colors hover:text-text sm:block"
         >
           <ArrowDown className="scroll-arrow mx-auto mb-1 size-4" aria-hidden="true" />
           {dict.hero.scroll}
