@@ -158,7 +158,7 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
                 }}
                 aria-current={lang === "es" ? "true" : undefined}
                 className={cn(
-                  "cursor-pointer rounded-full px-2.5 py-1 transition-colors",
+                  "cursor-pointer rounded-full px-3 py-2 transition-colors",
                   lang === "es"
                     ? "bg-accent-soft text-accent"
                     : "text-faint hover:text-text",
@@ -174,7 +174,7 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
                 }}
                 aria-current={lang === "en" ? "true" : undefined}
                 className={cn(
-                  "cursor-pointer rounded-full px-2.5 py-1 transition-colors",
+                  "cursor-pointer rounded-full px-3 py-2 transition-colors",
                   lang === "en"
                     ? "bg-accent-soft text-accent"
                     : "text-faint hover:text-text",
@@ -189,7 +189,7 @@ export function Header({ lang, dict }: { lang: Lang; dict: Dictionary }) {
               onClick={() => setOpen((value) => !value)}
               aria-expanded={open}
               aria-label={open ? dict.a11y.closeMenu : dict.a11y.openMenu}
-              className="flex cursor-pointer items-center gap-2.5 text-sm font-medium"
+              className="flex cursor-pointer items-center gap-2.5 py-2 pl-2 text-sm font-medium"
             >
               <span className="hidden font-mono text-xs uppercase tracking-[0.15em] text-muted sm:inline">
                 {open
