@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/content/projects";
 import type { Dictionary, Lang } from "@/content/types";
@@ -40,9 +41,26 @@ export function ProjectCard({
           featured ? "h-56 lg:h-full lg:min-h-[22rem]" : "h-44 sm:h-52"
         }`}
       >
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${gradient} transition-transform duration-700 ease-out group-hover:scale-105`}
-        />
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={`${project.name} — ${t.tagline}`}
+            fill
+            sizes={featured ? "(max-width: 1024px) 100vw, 600px" : "(max-width: 768px) 100vw, 1152px"}
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        ) : (
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${gradient} transition-transform duration-700 ease-out group-hover:scale-105`}
+          >
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 flex items-center justify-center font-display text-6xl font-bold tracking-tight text-white/[0.07]"
+            >
+              {project.name}
+            </span>
+          </div>
+        )}
         {t.award ? (
           <span className="absolute left-4 top-4 rounded-full bg-bg/70 px-3 py-1 font-mono text-xs text-text backdrop-blur-sm">
             {t.award}

@@ -28,7 +28,7 @@ export const en: Dictionary = {
     heading: "Things I've built.",
     intro: "A selection of projects where I brought design, code, and purpose together.",
     viewCase: "View case study",
-    liveDemo: "Live demo",
+    liveDemo: "Visit site",
     code: "Code",
   },
   stack: {
@@ -52,15 +52,15 @@ export const en: Dictionary = {
       },
       {
         period: "2025 — Present",
-        role: "Software Engineer",
+        role: "Software Engineer · Security / DevSecOps",
         summary:
-          "Software quality and security on large-scale projects: vulnerability analysis, containers, and CI/CD pipelines across multiple languages.",
+          "Application security on large-scale enterprise software. Remediated 1,000+ vulnerabilities (SAST/SCA) across ~50 Java and Node.js microservices, and built security gates into 15 CI/CD pipelines that block vulnerable builds before production.",
       },
       {
         period: "2024",
         role: "Freelance Full-Stack Engineer",
         summary:
-          "Mobile app MVP for an events client: discovery, invitations, and check-ins, with APIs and secure authentication.",
+          "End-to-end mobile MVP for an events client (discovery, invitations, and check-ins), with REST APIs, secure authentication, and maps. Design, iterate, and validate cycles directly with the client.",
       },
     ],
     awards: [

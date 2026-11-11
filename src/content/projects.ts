@@ -24,57 +24,29 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "game-hub",
-    name: "Game Hub",
-    year: "2023",
+    slug: "dkolor",
+    name: "D'Kolor",
+    year: "2026",
     featured: true,
-    tags: ["React", "TypeScript", "Vite", "Chakra UI"],
-    image: "/images/projects/game-hub/cover.png",
+    tags: ["React", "Vite", "Tailwind", "Framer Motion"],
+    image: "/images/projects/dkolor/cover.jpg",
     links: {
-      live: "https://game-hub-ruby-gamma.vercel.app",
-      repo: "https://github.com/Unxpected155/gameHub",
+      live: "https://www.dkolorpainting.com",
     },
     i18n: {
       es: {
-        tagline: "Explorador de videojuegos con búsqueda y filtros en tiempo real",
+        tagline:
+          "Landing de alta conversión para una empresa de pintura y remodelación",
         description:
-          "Una app para descubrir videojuegos: busca, filtra por género y plataforma, y encuentra tu próximo título en segundos.",
-        role: "Desarrollo frontend",
+          "Sitio de una página para captar clientes: comparador interactivo antes/después, servicios con fotos, formulario validado y contacto directo por WhatsApp. Bilingüe y pensado primero para móvil.",
+        role: "Freelance · Diseño y desarrollo frontend",
       },
       en: {
-        tagline: "A game-discovery app with live search and filtering",
+        tagline:
+          "A high-conversion landing page for a painting & remodeling company",
         description:
-          "An app to discover video games: search, filter by genre and platform, and find your next title in seconds.",
-        role: "Frontend development",
-      },
-    },
-  },
-  {
-    slug: "quit-smoke",
-    name: "QuitSmoke",
-    year: "2023",
-    featured: true,
-    tags: ["Spring Boot", "Angular", "AWS", "C++"],
-    image: "/images/projects/quit-smoke/cover.png",
-    links: {
-      live: "https://quitsmoke.netlify.app",
-      repo: "https://github.com/Unxpected155/QuitSmoke-FrontEnd",
-      repoBackend: "https://github.com/Unxpected155/QuitSmoke-Backend",
-    },
-    i18n: {
-      es: {
-        tagline: "Un ecosistema para dejar de fumar",
-        description:
-          "Combina comunidad, recompensas y un wearable que mide tu exposición real al monóxido de carbono para acompañarte en el camino.",
-        role: "Desarrollo full-stack (equipo)",
-        award: "3.er lugar · ExpoCenfo 2023",
-      },
-      en: {
-        tagline: "A quit-smoking ecosystem",
-        description:
-          "It blends community, rewards, and a wearable that measures your real carbon-monoxide exposure to support you along the way.",
-        role: "Full-stack development (team)",
-        award: "3rd place · ExpoCenfo 2023",
+          "A one-page site built to win clients: an interactive before/after slider, photo-rich services, a validated contact form, and direct WhatsApp contact. Bilingual and mobile-first.",
+        role: "Freelance · Design & frontend development",
       },
     },
   },
@@ -84,7 +56,6 @@ export const projects: Project[] = [
     year: "2025",
     featured: true,
     tags: ["ESP32", "Python", "Flask", "Azure", "OpenAI"],
-    image: "/images/projects/mediamigo/cover.png",
     links: {
       repo: "https://github.com/kendra-svg/rocketduo-expocenfo-25",
     },

@@ -38,7 +38,9 @@ export function Projects({ lang, dict }: { lang: Lang; dict: Dictionary }) {
             />
           ) : null}
           {rest.length ? (
-            <div className="grid gap-6 md:grid-cols-2">
+            <div
+              className={`grid gap-6 ${rest.length > 1 ? "md:grid-cols-2" : ""}`}
+            >
               {rest.map((project, index) => (
                 <ProjectCard
                   key={project.slug}

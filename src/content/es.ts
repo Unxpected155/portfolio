@@ -28,7 +28,7 @@ export const es: Dictionary = {
     heading: "Cosas que he construido.",
     intro: "Una selección de proyectos donde uní diseño, código y propósito.",
     viewCase: "Ver caso",
-    liveDemo: "Demo",
+    liveDemo: "Ver sitio",
     code: "Código",
   },
   stack: {
@@ -52,15 +52,15 @@ export const es: Dictionary = {
       },
       {
         period: "2025 — Presente",
-        role: "Ingeniero de Software",
+        role: "Ingeniero de Software · Seguridad / DevSecOps",
         summary:
-          "Calidad y seguridad de software en proyectos a gran escala: análisis de vulnerabilidades, contenedores y pipelines de CI/CD en múltiples lenguajes.",
+          "Seguridad de aplicaciones en software empresarial a gran escala. Remedié más de 1,000 vulnerabilidades (SAST/SCA) en ~50 microservicios Java y Node.js, e integré security gates en 15 pipelines de CI/CD que bloquean builds vulnerables antes de producción.",
       },
       {
         period: "2024",
         role: "Ingeniero Full-Stack Freelance",
         summary:
-          "MVP de una app móvil para un cliente de eventos: descubrimiento, invitaciones y check-ins, con APIs y autenticación segura.",
+          "MVP móvil de punta a punta para un cliente de eventos (descubrimiento, invitaciones y check-ins), con APIs REST, autenticación segura y mapas. Ciclos de diseño, iteración y validación directo con el cliente.",
       },
     ],
     awards: [
