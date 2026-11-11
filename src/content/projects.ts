@@ -14,6 +14,8 @@ export type Project = {
   featured: boolean;
   tags: string[];
   image?: string;
+  /** CSS object-position for the cover image (defaults to center). */
+  imagePosition?: string;
   links: {
     live?: string;
     repo?: string;
@@ -56,6 +58,8 @@ export const projects: Project[] = [
     year: "2025",
     featured: true,
     tags: ["ESP32", "Python", "Flask", "Azure", "OpenAI"],
+    image: "/images/projects/mediamigo/cover.webp",
+    imagePosition: "center 15%",
     links: {
       repo: "https://github.com/kendra-svg/rocketduo-expocenfo-25",
     },

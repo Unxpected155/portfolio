@@ -47,6 +47,7 @@ export function ProjectCard({
             alt={`${project.name} — ${t.tagline}`}
             fill
             sizes={featured ? "(max-width: 1024px) 100vw, 600px" : "(max-width: 768px) 100vw, 1152px"}
+            style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
         ) : (
