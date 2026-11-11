@@ -7,7 +7,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/gabriel-porras-brenes",
   },
   cv: {
-    es: "/cv-es.pdf",
-    en: "/cv-en.pdf",
+    es: "/Gabriel_Porras_Brenes_CV.pdf",
+    en: "/Gabriel_Porras_Brenes_CV.pdf",
   },
 } as const;

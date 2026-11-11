@@ -70,7 +70,8 @@ export const es: Dictionary = {
   },
   contact: {
     label: "Contacto",
-    heading: "¿Trabajamos juntos?",
+    heading: "Trabajemos",
+    headingAccent: "juntos",
     body: "Estoy disponible para proyectos freelance. Cuéntame qué tienes en mente.",
     ctaLabel: "Escríbeme",
     availability: "Disponible para freelance",

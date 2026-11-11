@@ -28,6 +28,7 @@ export function WordHeading({ children, as, className }: WordHeadingProps) {
       const split = SplitText.create(el, {
         type: "words",
         mask: "words",
+        wordsClass: "mask-unit",
         autoSplit: true,
         onSplit(self) {
           return gsap.from(self.words, {

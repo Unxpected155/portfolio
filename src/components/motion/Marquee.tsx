@@ -31,24 +31,29 @@ export function Marquee({
       const track = trackRef.current;
       if (!track || reduced) return;
 
-      const tween = gsap.to(track, {
-        xPercent: -50,
-        ease: "none",
-        duration: speed,
-        repeat: -1,
-      });
-      tween.timeScale(direction);
+      // direction 1 = scroll left (xPercent 0 -> -50), -1 = scroll right
+      // (xPercent -50 -> 0). Both play forward, so both always move.
+      const tween =
+        direction === 1
+          ? gsap.to(track, {
+              xPercent: -50,
+              ease: "none",
+              duration: speed,
+              repeat: -1,
+            })
+          : gsap.fromTo(
+              track,
+              { xPercent: -50 },
+              { xPercent: 0, ease: "none", duration: speed, repeat: -1 },
+            );
 
       const st = ScrollTrigger.create({
         onUpdate: (self) => {
-          const ts = gsap.utils.clamp(
-            -3,
-            3,
-            direction + self.getVelocity() / 1200,
-          );
-          tween.timeScale(ts);
+          // Speed up with scroll velocity, then ease back to the base speed.
+          const boost = gsap.utils.clamp(0, 3, Math.abs(self.getVelocity()) / 1000);
+          tween.timeScale(1 + boost);
           gsap.to(tween, {
-            timeScale: direction,
+            timeScale: 1,
             duration: 1.1,
             ease: "power2.out",
             overwrite: true,

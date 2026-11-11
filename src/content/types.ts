@@ -57,6 +57,7 @@ export type ExperienceCopy = {
 export type ContactCopy = {
   label: string;
   heading: string;
+  headingAccent: string;
   body: string;
   ctaLabel: string;
   availability: string;

@@ -81,6 +81,7 @@ export function HeroReveal({
             type: "lines, words, chars",
             mask: "chars",
             linesClass: "split-line",
+            charsClass: "mask-unit",
             ignore: ".hero-dot",
           });
           landTime =

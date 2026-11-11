@@ -12,6 +12,7 @@
   --color-accent: oklch(0.58 0.2 258);
   --color-accent-hover: oklch(0.64 0.19 258);
   --color-accent-soft: oklch(0.58 0.2 258 / 0.12);
+  --color-highlight: oklch(0.72 0.19 55);
 
   --text-display: clamp(3rem, 8vw, 6.5rem);
   --text-h1: clamp(2.25rem, 5vw, 3.75rem);
@@ -74,6 +75,13 @@ html.lenis body {
 
 .split-line {
   will-change: transform;
+}
+
+/* Let glyph descenders (g, y, p, j) paint past the SplitText mask clip
+   without shifting layout, so they aren't cut off. */
+.split-line-mask,
+.mask-unit-mask {
+  overflow-clip-margin: 0.3em;
 }
 
 /* "Curtain" view transition: two panels meet, then part to reveal */
