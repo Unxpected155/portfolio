@@ -30,9 +30,28 @@ export type ProjectsCopy = {
   code: string;
 };
 
+export type CaseStudyCopy = {
+  back: string;
+  challenge: string;
+  howItWorks: string;
+  flowNote: string;
+  features: string;
+  gallery: string;
+  details: string;
+  role: string;
+  year: string;
+  recognition: string;
+  stack: string;
+  repo: string;
+};
+
 export type StackGroup = {
   title: string;
   items: string[];
+  /** Short descriptor shown next to the group title (e.g. "SAST · SCA · contenedores"). */
+  note?: string;
+  /** Highlights the group as a specialty (used for the Security block). */
+  accent?: boolean;
 };
 
 export type StackCopy = {
@@ -101,4 +120,5 @@ export type Dictionary = {
   meta: MetaCopy;
   a11y: A11yCopy;
   notFound: NotFoundCopy;
+  caseStudy: CaseStudyCopy;
 };

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/content/projects";
 import type { Dictionary, Lang } from "@/content/types";
@@ -98,6 +99,15 @@ export function ProjectCard({
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-5 pt-2 text-sm">
+          {project.caseStudy ? (
+            <Link
+              href={`/${lang}/work/${project.slug}`}
+              className="inline-flex items-center gap-1 font-medium text-text transition-colors hover:text-accent"
+            >
+              {dict.projects.viewCase}
+              <ArrowUpRight className="size-4" aria-hidden="true" />
+            </Link>
+          ) : null}
           {project.links.live ? (
             <a
               href={project.links.live}

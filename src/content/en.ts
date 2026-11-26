@@ -8,8 +8,8 @@ export const en: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    eyebrow: "Full-Stack Software Engineer",
-    role: "Full-Stack Software Engineer",
+    eyebrow: "Software Engineer · Application Security",
+    role: "Software Engineer · Application Security",
     tagline: "Software with excellence, from idea to reality.",
     ctaPrimary: "View work",
     ctaSecondary: "Download CV",
@@ -35,10 +35,24 @@ export const en: Dictionary = {
     label: "Stack",
     heading: "Tools I work with.",
     groups: [
-      { title: "Languages", items: ["TypeScript", "Java", "C#", "C++", "SQL"] },
-      { title: "Frontend", items: ["React", "Next.js", "Angular", "Tailwind"] },
-      { title: "Backend", items: ["Spring Boot", ".NET", "Node.js", "REST APIs"] },
-      { title: "Cloud & quality", items: ["AWS", "Azure", "Docker", "CI/CD"] },
+      { title: "Languages", items: ["TypeScript", "JavaScript", "Java", "SQL"] },
+      { title: "Frontend", items: ["React", "Next.js", "Tailwind"] },
+      { title: "Backend", items: ["Node.js", "Spring Boot", "REST APIs"] },
+      { title: "DevOps", items: ["Docker", "Git/GitHub", "CI/CD"] },
+      {
+        title: "Security",
+        note: "SAST · SCA · containers",
+        accent: true,
+        items: [
+          "Snyk",
+          "SonarQube",
+          "Apiiro",
+          "Spring Security",
+          "JWT",
+          "TLS",
+          "Secure CI/CD",
+        ],
+      },
     ],
   },
   experience: {
@@ -52,9 +66,9 @@ export const en: Dictionary = {
       },
       {
         period: "2025 — Present",
-        role: "Software Engineer · Security / DevSecOps",
+        role: "Full Stack Engineer · Application Hardening (AppSec) — Babel",
         summary:
-          "Application security on large-scale enterprise software. Remediated 1,000+ vulnerabilities (SAST/SCA) across ~50 Java and Node.js microservices, and built security gates into 15 CI/CD pipelines that block vulnerable builds before production.",
+          "Application security on large-scale enterprise software. Remediated 1,000+ vulnerabilities (SAST/SCA) across ~50 applications and services, mostly Node.js, and built security gates into 15 CI/CD pipelines that block vulnerable builds before production. I lean on Kubernetes, Grafana, and OpenAPI for orchestration, observability, and API documentation.",
       },
       {
         period: "2024",
@@ -83,9 +97,9 @@ export const en: Dictionary = {
     rights: "All rights reserved.",
   },
   meta: {
-    title: "Gabriel Porras — Full-Stack Software Engineer",
+    title: "Gabriel Porras — Software Engineer · Application Security",
     description:
-      "Full-stack software engineer. I build digital products end to end, with a focus on quality, security, and performance.",
+      "Software engineer focused on application security (AppSec). I build and secure products end to end, with a focus on quality and performance.",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -97,5 +111,19 @@ export const en: Dictionary = {
     title: "Page not found",
     body: "The page you're looking for doesn't exist or was moved.",
     cta: "Back to home",
+  },
+  caseStudy: {
+    back: "Work",
+    challenge: "The challenge",
+    howItWorks: "How it works",
+    flowNote: "From a written sentence to a spoken reminder, end to end.",
+    features: "What it does",
+    gallery: "The build",
+    details: "Details",
+    role: "Role",
+    year: "Year",
+    recognition: "Recognition",
+    stack: "Stack",
+    repo: "View repository",
   },
 };
